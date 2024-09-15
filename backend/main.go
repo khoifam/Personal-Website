@@ -20,14 +20,14 @@ var db = make(map[string]string)
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.LoadHTMLGlob("static/*")
+	r.LoadHTMLGlob("./static/*")
 	r.Static("/static", "./static")
 
 	r.GET("/", func(c *gin.Context) {
 		c.Redirect(http.StatusFound, "/static/index.html")
 	})
 
-	r.Static("/weather", "./weather_app/build")
+	r.Static("/weather", "../weather_app/build")
 
 	// Weather Comparison API
 	r.GET("/api/weather/:location", func(c *gin.Context) {

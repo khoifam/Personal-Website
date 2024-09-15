@@ -1,0 +1,8 @@
+services:
+  backend:
+    build: .
+    env_file: backend/.env
+    ports:
+      - 8080:8080
+    container_name: personal-website
+    # command: tail -F anything
