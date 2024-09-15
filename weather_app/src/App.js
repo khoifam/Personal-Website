@@ -113,7 +113,7 @@ class Location extends React.Component {
 
   getCoords(location) {
     console.log("getCoords STARTS----------------------------------");
-    const geocodingURL = 'http://localhost:8080/api/weather/' + location;
+    const geocodingURL = '/api/weather/' + location;
     
     axios.get(geocodingURL).then((response) => {
       console.log("AXIOS GET GEOCODINGURL STARTS---------------");
